@@ -1,0 +1,22 @@
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Tooltip } from '@progress/kendo-react-tooltip';
+
+const TooltipContentTemplate = (props: any) => {
+    return (
+      <div><div >Example:</div><ul><li>OGC Communications (OGC) (Example of a stock with a ticker symbol)</li><li>OGE Energy (Example of stock that produce more than $1000 in income)</li></ul> <strong>{props.title}</strong></div>
+    );
+}
+
+const App = () => {
+    return (
+      <Tooltip content={(props) => <TooltipContentTemplate title={props.title}/>} anchorElement="target" position="bottom" >
+        
+         <div title="&nbsp;" >Icon</div>
+        
+      </Tooltip>
+    );
+}
+ReactDOM.render(
+  <App />,
+    document.querySelector('my-app'));
